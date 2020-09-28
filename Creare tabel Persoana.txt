@@ -1,0 +1,23 @@
+USE [MagazinDb]
+GO
+
+/****** Object:  Table [dbo].[Tabel_Users]    Script Date: 9/28/2020 5:28:05 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Tabel_Users](
+	[Use ID (PK)] [int] NOT NULL,
+	[nume] [varchar](50) NULL,
+	[prenume] [varchar](50) NULL,
+	[username] [varchar](50) NULL,
+	[password] [varchar](50) NULL,
+	[adresa livrare] [varchar](50) NULL,
+ CONSTRAINT [PK_Table_1_Users] PRIMARY KEY CLUSTERED 
+(
+	[Use ID (PK)] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO

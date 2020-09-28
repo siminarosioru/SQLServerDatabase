@@ -1,0 +1,18 @@
+USE [MagazinDb]
+GO
+
+/****** Object:  Table [dbo].[Tabel_Comenzi]    Script Date: 9/28/2020 5:33:36 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Tabel_Comenzi](
+	[Comanda ID (PK)] [int] NOT NULL,
+	[Adresa livrare] [nvarchar](50) NULL,
+	[Data plasare comanda] [time](7) NULL,
+	[Data estimata livrare] [time](7) NULL,
+	[UserID] [varchar](50) NULL
+) ON [PRIMARY]
+GO

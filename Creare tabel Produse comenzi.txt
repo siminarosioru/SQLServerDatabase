@@ -1,0 +1,17 @@
+USE [MagazinDb]
+GO
+
+/****** Object:  Table [dbo].[Tabel_produse_comenzi]    Script Date: 9/28/2020 5:36:33 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Tabel_produse_comenzi](
+	[intro ID (PK)] [nvarchar](50) NOT NULL,
+	[comanda ID] [int] NULL,
+	[produsID] [nvarchar](50) NULL,
+	[cantitate] [int] NOT NULL
+) ON [PRIMARY]
+GO
