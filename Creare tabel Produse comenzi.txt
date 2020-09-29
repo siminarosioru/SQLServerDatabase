@@ -1,17 +1,34 @@
 USE [MagazinDb]
 GO
 
-/****** Object:  Table [dbo].[Tabel_produse_comenzi]    Script Date: 9/28/2020 5:36:33 PM ******/
+/****** Object:  Table [dbo].[Tabel_Produse comenzi]    Script Date: 9/29/2020 3:21:05 PM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [dbo].[Tabel_produse_comenzi](
-	[intro ID (PK)] [nvarchar](50) NOT NULL,
-	[comanda ID] [int] NULL,
-	[produsID] [nvarchar](50) NULL,
-	[cantitate] [int] NOT NULL
+CREATE TABLE [dbo].[Tabel_Produse comenzi](
+	[IdProdus] [nvarchar](50) NOT NULL,
+	[IdComanda] [nvarchar](50) NULL,
+ CONSTRAINT [PK_Tabel_Produse comenzi] PRIMARY KEY CLUSTERED 
+(
+	[IdProdus] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
+ALTER TABLE [dbo].[Tabel_Produse comenzi]  WITH CHECK ADD  CONSTRAINT [FK_Tabel_Produse comenzi_Tabel_Comenzi] FOREIGN KEY([IdComanda])
+REFERENCES [dbo].[Tabel_Comenzi] ([IdComanda])
+GO
+
+ALTER TABLE [dbo].[Tabel_Produse comenzi] CHECK CONSTRAINT [FK_Tabel_Produse comenzi_Tabel_Comenzi]
+GO
+
+ALTER TABLE [dbo].[Tabel_Produse comenzi]  WITH CHECK ADD  CONSTRAINT [FK_Tabel_Produse comenzi_Tabel_Stocuri] FOREIGN KEY([IdProdus])
+REFERENCES [dbo].[Tabel_Stocuri] ([IdProdus])
+GO
+
+ALTER TABLE [dbo].[Tabel_Produse comenzi] CHECK CONSTRAINT [FK_Tabel_Produse comenzi_Tabel_Stocuri]
+GO
+
