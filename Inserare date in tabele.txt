@@ -1,0 +1,41 @@
+USE [MagazinDb]
+GO
+
+INSERT INTO [dbo].[Table_Users]
+		([IdPersoana]
+		,[Nume]
+		,[Prenume]
+		,[Email]
+		,[Telefon]
+		,[Adresa livrare])
+VALUES (1, 'Grigore', 'Adrian', 'gadrian@yahoo.com', 742113478, 'Aleea Balti 1 Timisoara'),
+		(2, 'Opris', 'Ioana', 'oioana@yahoo.com', 742116629, 'Aleea Balcic, 4, Timisoara'),
+		(3, 'Menesi', 'Ana', 'menesia@yahoo.com', 743111266, 'Aleea Azurului, 12, Timisoara'),
+		(4, 'Rusu', 'Adriana', 'radriana@yahoo.com', 745123987,	'Aleea Baghetei, 8, Timisoara'),
+		(5, 'Grigoras', 'Marius', 'gmarius@yahoo.com', 256123976, 'Aleea Aurel Ciupe, 8, Timisoara')
+
+INSERT INTO [dbo].[Tabel_Comenzi]
+		([IdComanda]
+		,[IdPersoana]
+		,[Adresa livrare]
+		,[Data plasare comanda]
+		,[Data estimata livrare])
+VALUES ('Birou', 2, 'Aleea Balcic, 4, Timisoara', 28/09/2020, 10/10/2020),
+		('Scaun', 1, 'Aleea Balti 1 Timisoara', 29/09/2020, 13/10/2020)
+
+INSERT INTO [dbo].[Tabel_Produse comenzi]
+		([IdProdus]
+		,[IdComanda])
+VALUES ('ProdusBirou', 'Birou'),
+		('ProdusScaun', 'Scaun')
+
+INSERT INTO [dbo].[Tabel_Stocuri]
+		([IdProdus]
+		,[Nume produs]
+		,[Stoc]
+		,[Pret]
+		,[Descriere])
+VALUES ('ProdusBirou', 'BirouNumeProdus', 5, 200.44, 'Birou pal'),
+		('ProdusScaun', 'SaunNumeProdus', 12, 10.5, 'Scaun lemn')
+
+GO
