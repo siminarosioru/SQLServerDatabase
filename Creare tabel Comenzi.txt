@@ -1,7 +1,7 @@
 USE [MagazinDb]
 GO
 
-/****** Object:  Table [dbo].[Tabel_Comenzi]    Script Date: 9/28/2020 5:33:36 PM ******/
+/****** Object:  Table [dbo].[Tabel_Comenzi]    Script Date: 9/29/2020 3:19:18 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -9,10 +9,21 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[Tabel_Comenzi](
-	[Comanda ID (PK)] [int] NOT NULL,
+	[IdComanda] [nvarchar](50) NOT NULL,
+	[IdPersoana] [int] NULL,
 	[Adresa livrare] [nvarchar](50) NULL,
-	[Data plasare comanda] [time](7) NULL,
-	[Data estimata livrare] [time](7) NULL,
-	[UserID] [varchar](50) NULL
+	[Data plasare comanda] [nchar](10) NULL,
+	[Data estimata livrare] [nchar](10) NULL,
+ CONSTRAINT [PK_Tabel_Comenzi] PRIMARY KEY CLUSTERED 
+(
+	[IdComanda] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Tabel_Comenzi]  WITH CHECK ADD  CONSTRAINT [FK_Tabel_Comenzi_Table_Users] FOREIGN KEY([IdPersoana])
+REFERENCES [dbo].[Table_Users] ([IdPersoana])
+GO
+
+ALTER TABLE [dbo].[Tabel_Comenzi] CHECK CONSTRAINT [FK_Tabel_Comenzi_Table_Users]
 GO
