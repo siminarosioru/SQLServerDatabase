@@ -1,0 +1,12 @@
+INSERT INTO [dbo].[Clienti]
+	([codClient]
+	,[Nume]
+	,[Prenume]
+	,[email]
+	,[judet]
+	,[cnp])
+VALUES ('1-IonescuP', 'Ionescu', 'Paul', 'ionescup@yahoo.com', 'Timis', '1900211336689'),
+	('2-PopescuI', 'Popescu', 'Ioana', 'popescui@yahoo.com', 'Timis', '2981112342111'),
+	('3-GeorgescuS', 'Georgescu', 'Sorina', 'georgescis@yahoo.com', 'Arad', '2901204882365'),
+	('4-GeorgescuC', 'Georgescu', 'Cristi', 'georgescuc@yahoo.com', 'Arad', '1890204225558'),
+	('5-MitricaM', 'Mitrica', 'Mircea', 'mitricam@yahoo.com', 'Timis', '1861203885521')
