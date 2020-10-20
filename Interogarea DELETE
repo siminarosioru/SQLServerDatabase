@@ -1,0 +1,4 @@
+//folosim acest tip de interogare atunci cand dorim sa stergem anumite inregistrari
+DELETE 
+FROM Table_Users
+WHERE Nume = 'Menesi' AND Prenume = 'Ana'
