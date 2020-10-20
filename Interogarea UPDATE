@@ -1,0 +1,4 @@
+//cand dorim sa modificam o inregistrare folosim acest tip de interogare
+UPDATE Table_Users
+SET Prenume = 'Ionela'
+WHERE Nume = 'Opris' AND Prenume = 'Ioana'
